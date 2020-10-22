@@ -1,0 +1,45 @@
+{
+  "name": "alchemy-asset-transfers-benchmark",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "format-file": "prettier --write",
+    "format": "find . | grep -v node_modules | grep -v dist | egrep '\\.(js(on)?|md|scss|tsx?)?$' | xargs npm run format-file",
+    "lint-file": "tslint",
+    "lint": "tslint --project .",
+    "test": "ts-node --transpile-only src/index.ts",
+    "typecheck-watch": "tsc --noEmit --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,json}": [
+      "npm run format-file"
+    ],
+    "**/*.{ts,tsx}": [
+      "npm run lint-file --fix",
+      "npm run format-file"
+    ]
+  },
+  "devDependencies": {
+    "@alch/alchemy-web3": "^0.1.17",
+    "@types/node": "^13.11.1",
+    "@types/yargs": "^15.0.9",
+    "husky": "^4.2.4",
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4",
+    "transducist": "^2.2.0",
+    "ts-node": "^8.8.2",
+    "tslib": "^1.11.1",
+    "tslint": "^6.1.1",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.8.3",
+    "web3": "^1.3.0",
+    "yargs": "^16.1.0"
+  }
+}
