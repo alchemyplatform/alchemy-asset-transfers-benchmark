@@ -42,7 +42,8 @@ async function main(): Promise<void> {
         excludeZeroValue: false,
         category: [
           AssetTransfersCategory.EXTERNAL,
-          AssetTransfersCategory.TOKEN,
+          AssetTransfersCategory.ERC20,
+          AssetTransfersCategory.ERC721,
         ],
       };
       const assetTransfers = await web3.alchemy.getAssetTransfers(filters);
