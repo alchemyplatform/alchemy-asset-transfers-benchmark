@@ -27,7 +27,7 @@
     ]
   },
   "devDependencies": {
-    "@alch/alchemy-web3": "^0.1.17",
+    "@alch/alchemy-web3": "^1.4.7",
     "@types/node": "^13.11.1",
     "@types/yargs": "^15.0.9",
     "husky": "^4.2.4",
